@@ -11,11 +11,12 @@ from langchain.callbacks import get_openai_callback
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Ask your PDF")
-    st.header("Ask your PDF 💬")
+    
+    st.set_page_config(page_title="Interroge un pdf ")
+    st.header("Interroge un pdf 👁️")
     
     # upload file
-    pdf = st.file_uploader("Upload your PDF", type="pdf")
+    pdf = st.file_uploader("Téléverser le PDF", type="pdf")
     
     # extract the text
     if pdf is not None:
@@ -27,7 +28,7 @@ def main():
       # split into chunks
       text_splitter = CharacterTextSplitter(
         separator="\n",
-        chunk_size=1000,
+        chunk_size=1500,
         chunk_overlap=200,
         length_function=len
       )
